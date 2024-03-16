@@ -8,10 +8,10 @@ Guild ~~is~~ will be a cross-platform operating environment built in Racket. Not
 ## Development Plan (not for users)
 
 - [X] Install Racket
-- [ ] Set up Guild's structure
-- [ ] Write some Racket code just to test
-- [ ] Write something that gives the illusion of a real Guild environment
-- [ ] Unit testing
+- [X] Set up Guild's structure
+- [X] Write some Racket code just to test
+- [X] Write something that gives the illusion of a real Guild environment
+- [ ] Write something resembling a standard library
 - [ ] Documentation
 - [ ] Was that it?
 - [ ] Come up with more things to add to the plan
