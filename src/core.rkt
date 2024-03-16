@@ -4,8 +4,8 @@
 
 #lang racket
 
-(require "startup.rkt")
-(require "input-output.rkt")
+(require "startup.rkt")       ;; welcome message and not much else
+(require "input-output.rkt")  ;; manages user interactions and program responses
 
 (define (main)
     (welcome-message)

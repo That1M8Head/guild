@@ -1,4 +1,4 @@
-;; startup.rkt - handles startup stuff
+;; startup.rkt - welcome message and not much else
 ;; Copyright (c) 2024 Arsalan "Velocity" Kazmi
 ;; This file is part of Guild.
 

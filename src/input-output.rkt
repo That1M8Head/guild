@@ -1,4 +1,4 @@
-;; input-output.rkt - handles input and output
+;; input-output.rkt - manages user interactions and program responses
 ;; Copyright (c) 2024 Arsalan "Velocity" Kazmi
 ;; This file is part of Guild.
 
