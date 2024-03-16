@@ -36,15 +36,22 @@
         (let ((result (eval (read (open-input-string expr)) env)))
             (format "~a" result)))))
 
+(define (list-commands)
+    (display-as-output "Available commands:")
+    (display-as-output "  help - this message")
+    (display-as-output "  exit - leave Guild")
+    (display-as-output "  version - get the Guild version")
+    (display-as-output "Commands wrapped in parentheses are treated as Lisp expressions."))
+
 (define (execute-command command)
     (cond
         ;; Let the user exit
         ((string=? command "exit")
             (display-as-output "Thanks for using Guild!")
             (exit 0))
-        ;; No help yet
+        ;; Give the user a list of commands
         ((string=? command "help")
-            (display-as-output "Sorry, no help available yet."))
+            (list-commands))
         ;; Simply display the version
         ((string=? command "version")
             (display-as-output (string-append (get-version) " " (get-version-name))))
