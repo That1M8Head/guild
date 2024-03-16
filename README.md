@@ -19,6 +19,8 @@ It's not ready yet.
 - [X] Set up Guild's structure
 - [X] Write some Racket code just to test
 - [X] Write something that gives the illusion of a real Guild environment
+- [X] Split off the core into separate files
+- [X] Implement Lisp evaluation
 - [ ] Write something resembling a standard library
 - [ ] Documentation
 - [ ] Was that it?
