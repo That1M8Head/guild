@@ -13,4 +13,5 @@
     (display "You're using Guild version ")
     (display (get-version))
     (displayln (string-append " (" (get-version-name) ")"))
+    (displayln "Type some commands or a Lisp expression.")
     (flush-output))
