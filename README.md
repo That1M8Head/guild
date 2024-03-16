@@ -15,6 +15,10 @@ It's not ready yet.
 
 ## Development Plan (not for users)
 
+- [X] Decide to use GNU Guile
+- [X] Name the project "Guild"
+- [X] Realise Guile is not available for Windows
+- [X] Decide to use Racket instead
 - [X] Install Racket
 - [X] Set up Guild's structure
 - [X] Write some Racket code just to test
@@ -22,6 +26,13 @@ It's not ready yet.
 - [X] Split off the core into separate files
 - [X] Implement Lisp evaluation
 - [ ] Write something resembling a standard library
-- [ ] Documentation
+- [-] Documentation
+  - [X] This README
+  - [ ] Docstrings
+  - [ ] Documentation files
+  - [ ] User manual
+- [ ] Outline an API
+- [ ] Go insane trying to code the API
+- [ ] Actually code the API
 - [ ] Was that it?
 - [ ] Come up with more things to add to the plan
