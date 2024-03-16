@@ -26,7 +26,7 @@ It's not ready yet.
 - [X] Split off the core into separate files
 - [X] Implement Lisp evaluation
 - [ ] Write something resembling a standard library
-- [-] Documentation
+- [ ] Documentation
   - [X] This README
   - [ ] Docstrings
   - [ ] Documentation files
