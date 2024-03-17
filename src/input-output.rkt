@@ -66,6 +66,9 @@
         ;; Or the name
         ((string=? command "(get-version-name)")
             (display-as-output (get-version-name)))
+        ;; Or the last update
+        ((string=? command "(get-last-updated)")
+            (display-as-output (get-last-updated)))
         ;; Otherwise treat it as an expression and eval it
         (else
             (display-as-output (evaluate-expression command)))))
