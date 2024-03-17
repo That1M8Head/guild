@@ -2,6 +2,8 @@
 ;; Copyright (c) 2024 Arsalan "Velocity" Kazmi
 ;; This file is part of Guild.
 
+;; Required by: core.rkt
+
 #lang racket
 
 (require "version-info.rkt")
