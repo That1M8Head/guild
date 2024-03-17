@@ -18,8 +18,8 @@
     (displayln (string-append "-> " string)))
 
 (define (is-surrounded-by-parens str)
-  (and (string=? (substring str 0 1) "(")
-       (string=? (substring str (- (string-length str) 1)) ")")))
+    (and (string=? (substring str 0 1) "(")
+        (string=? (substring str (- (string-length str) 1)) ")")))
 
 (define (evaluate-expression expr)
     (define (add-imports-to-eval env)
