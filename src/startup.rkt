@@ -14,4 +14,5 @@
     (display (get-version))
     (displayln (string-append " (" (get-version-name) ")"))
     (displayln "Type some commands or a Lisp expression.")
+    (displayln "Type (list-commands) for help. Type (quit-guild) to exit.")
     (flush-output))

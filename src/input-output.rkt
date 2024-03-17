@@ -12,7 +12,10 @@
 (define (read-input)
     (display "Guild >> ")
     (let ((input (string-trim (read-line))))
-    (execute-command input)))
+        (cond ((string=? input "")
+            (read-input))
+            (else
+            (execute-command input)))))
 
 (define (display-as-output string)
     (displayln (string-append "-> " string)))
@@ -31,6 +34,7 @@
         (with-handlers ([exn:fail? (lambda (ex)
                                     (display "Evaluation error: ")
                                     (display (exn-message ex))
+                                    (display "If you intended to use a built-in command, try (list-commands) for help.")
                                     (newline)
                                     "Evaluation failed")])
         (let ((result (eval (read (open-input-string expr)) env)))
@@ -38,28 +42,30 @@
 
 (define (list-commands)
     (display-as-output "Available commands:")
-    (display-as-output "  help - this message")
-    (display-as-output "  exit - leave Guild")
-    (display-as-output "  version - get the Guild version")
-    (display-as-output "Commands wrapped in parentheses are treated as Lisp expressions."))
+    (display-as-output "  (list-commands) - this message")
+    (display-as-output "  (quit-guild) - leave Guild")
+    (display-as-output "  (get-version) - get the Guild version")
+    (display-as-output "  (get-version-name) - get the name of the Guild version")
+    (display-as-output "Commands wrapped in parentheses that don't match the above are treated as Lisp expressions."))
 
 (define (execute-command command)
     (cond
+        ((not (is-surrounded-by-parens command))
+            (display-as-output (string-append command " is using invalid syntax."))
+            (display-as-output "Type (list-commands) for help."))
         ;; Let the user exit
-        ((string=? command "exit")
+        ((string=? command "(quit-guild)")
             (display-as-output "Thanks for using Guild!")
             (exit 0))
         ;; Give the user a list of commands
-        ((string=? command "help")
+        ((string=? command "(list-commands)")
             (list-commands))
         ;; Simply display the version
-        ((string=? command "version")
-            (display-as-output (string-append (get-version) " " (get-version-name))))
-        ;; If it's got brackets (parentheses) around the command,
-        ;; treat it as an expression and eval it
-        ((is-surrounded-by-parens command)
-            (display-as-output (evaluate-expression command)))
-        ;; Otherwise tell the user it doesn't exist
+        ((string=? command "(get-version)")
+            (display-as-output (get-version)))
+        ;; Or the name
+        ((string=? command "(get-version-name)")
+            (display-as-output (get-version-name)))
+        ;; Otherwise treat it as an expression and eval it
         (else
-            (display-as-output (string-append command " doesn't seem to exist."))
-            (display-as-output "If this is a Lisp expression, wrap it in parentheses."))))
+            (display-as-output (evaluate-expression command)))))
